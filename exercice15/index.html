@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice JQuery</title>
+</head>
+<body>
+    <h1>Quand un champ a le focus, définir sa bordure à "1px solid green". Quand le champ perd le focus, définir la bordure à "1px solid red"</h1>
+    <form>
+        <label for="nom">Nom : </label><input type="text" name="nom" id="nom" />
+        <label for="prenom">Prénom : </label><input type="text" name="prenom" id="prenom" />
+        <button type="button" name="button" >Envoyer</button>
+    </form>
+<!--======================Partie JavaScript=====================-->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+       $(document).ready(function(){
+            $("#nom").focusin(function(){
+            $("#nom, #prenom").css('border','6px solid green');
+        });
+            $("#nom").focusout(function(){
+            $("#nom, #prenom").css('border','6px solid red');
+        });
+    });
+        
+    </script>
+</body>
+</html>
