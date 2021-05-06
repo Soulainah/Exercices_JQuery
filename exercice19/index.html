@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <title>Exercice JQuery</title>
+    <style>
+        .texteVert {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h3>créer une div coloré et cinq boutons. Un pour augmenter la hauteur de la div, un pour faire disparaitre la div, un pour changer la couleur de la div, un pour revenir à la couleur initiale et un pour la faire réapparaitre.</h3>
+    <div class="container-fluid text-center mt-5">
+        <button id="augmenter" type="button" class="btn btn-primary">Augmenter la taille</button>
+        <button id="cacher" type="button" class="btn btn-secondary">Masquer</button>
+        <button id="afficher" type="button" class="btn btn-warning">Afficher</button>
+        <button id="changeCouleur" type="button" class="btn btn-success">Changer la couleur</button>
+        <button id="resetCouleur" type="button" class="btn btn-danger">Revenir à la couleur initiale</button>
+        <p id="texte" class="display-4 mt-5">Ouais ouais ouais ouais ouais ouais ouais ouais ouais !!!</p>
+    </div>
+<!--======================Partie JavaScript=====================-->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+       $(document).ready(function() {
+            $("#augmenter").click(function(){
+               $("#texte").css("font-size", "+=10px");
+           });           
+           $("#cacher").click(function(){
+               $("#texte").hide();
+           });
+           $("#afficher").click(function(){
+               $("#texte").show();
+           });
+           $("#changeCouleur").click(function(){
+               $("#texte").addClass("texteVert"); //j'ai donné le nom de classe de mon CSS
+           });
+           $("#resetCouleur").click(function(){
+               $("#texte").removeClass("texteVert");
+           });
+        });
+    </script>
+</body>
+</html>
